@@ -1,0 +1,9 @@
+<script>
+  const days = prompt("Input days");
+
+  const year = Math.floor(days / 365);
+  const month = Math.floor((days % 365) / 30);
+  const day = Math.floor((days % 365) % 30);
+
+  alert(`${year} year, ${month} month, ${day} day`);
+</script>

@@ -1,0 +1,12 @@
+<script>
+  const dateA = prompt("Input first date (YYYY_MM_DD)");
+  const dateB = prompt("Input second date (YYYY_MM_DD)");
+
+  const date1 = new Date(dateA);
+  const date2 = new Date(dateB);
+
+  const diffTime = Math.abs(date1 - date2);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  alert(`${diffDays} days`);
+</script>
