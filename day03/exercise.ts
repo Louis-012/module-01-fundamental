@@ -1,21 +1,21 @@
 // Write a code to check whether the number is odd or even
 // ○ Example: 25 → odd number, 2 → even number
 
-let number: number = 13;
+let number: number = 14;
+let printed: string = "";
 
 if (number % 2 == 0) {
-  const print: string = `${number} : even number`;
-  console.log(print);
+  printed = `${number} : even number`;
 } else if (number % 2 == 1) {
-  const print: string = `${number} : odd number`;
-  console.log(print);
+  printed = `${number} : odd number`;
 }
+console.log(printed);
 
 // Write a code to check whether the number is prime number or not
 // ○ Example: 7 → 7 is a prime number
 // ○ Example: 6 → 6 is not a prime number
 
-number = 7;
+number = 15;
 let isPrime: boolean = true;
 for (let index = 2; index < number; index++) {
   if (number % index === 0) {
@@ -61,3 +61,4 @@ for (let index = 0; index <= limit; index++) {
   n1 = n2;
   n2 = fib;
 }
+console.log(n2 - n1);
