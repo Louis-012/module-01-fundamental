@@ -10,23 +10,16 @@ function findMinMax(arr: number[]) {
   for (let i = 0; i < arr.length; i++) {
     sum += arr[i];
   }
+  const avrg = sum / arr.length;
   console.log(min);
   console.log(max);
-  console.log(sum);
+  console.log(avrg);
 
-  const result = {
-    small: min,
-    big: max,
-    avrg: sum / arr.length,
-  };
-
+  const result = `Lowest: ${min}, Highest: ${max}, Average: ${avrg}`;
   return result;
 }
 
-const answer = findMinMax(arr);
-console.log(`Highest is: ${answer.big}`);
-console.log(`Lowest is: ${answer.small}`);
-console.log(`Average is: ${answer.avrg}`);
+console.log(findMinMax(arr));
 
 // Write a function that takes an array of words and returns a string by concatenating the words in the array,
 // separated by commas and - the last word - by an 'and'.
