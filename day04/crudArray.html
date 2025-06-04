@@ -1,0 +1,35 @@
+<script>
+  const list = ["item1", "item2", "item3", "item4", "item5"];
+
+  do {
+    let listed = "Daftar Produk:\n";
+    for (let i = 0; i < list.length; i++) {
+      listed += `${i + 1}. ${list[i]} \n`;
+    }
+
+    let mainMenu = prompt(
+      "===Menu==\n1. Lihat Produk\n2. Tambah Produk\n3. Perbarui Produk \n4. Hapus Produk\n5. Keluar\n\nMasukkan nomor menu"
+    );
+    if (mainMenu == 1) {
+      alert(listed);
+    } else if (mainMenu == 2) {
+      let add = prompt(`Masukkan produk baru`);
+      list.push(add);
+      alert("Produk ditambahkan");
+    } else if (mainMenu == 3) {
+      let update = prompt(
+        `${listed}\nMasukkan nomor produk yang ingin diperbarui`
+      );
+      list.splice(update - 1, 1, prompt("Masukkan nama produk baru"));
+      alert("Produk diperbarui");
+    } else if (mainMenu == 4) {
+      let deleted = prompt(
+        `${listed}\nMasukkan nomor produk yang ingin dihapus`
+      );
+      list.splice(deleted - 1, 1);
+      alert("Produk dihapus");
+    } else if (mainMenu == 5) {
+      break;
+    }
+  } while (list);
+</script>
