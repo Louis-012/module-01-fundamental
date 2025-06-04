@@ -1,0 +1,38 @@
+<script>
+  const database = ["Kaos", "Celana", "Sepatu", "Topi", "Tas"];
+  function lihatData() {
+    let data = "Daftar Produk:\n";
+    for (let i = 0; i < database.length; i++) {
+      data += `${i + 1}. ${database[i]}\n`;
+    }
+    alert(data);
+  }
+  function tambahData() {
+    const nama = prompt("Masukkan nama produk baru:");
+    database.push(nama);
+    alert(`${nama} berhasil ditambahkan.`);
+  }
+
+  do {
+    const menu = prompt(`=== Menu ===
+          1. Lihat Data
+          2. Tambah Data
+          3. Perbarui Data
+          4. Hapus Data
+          5. Keluar
+          
+          Masukkan pilihan menu: `);
+
+    if (menu === "1") {
+      lihatData();
+    } else if (menu === "2") {
+      tambahData();
+    } else if (menu === "3") {
+      // perbaruiData()
+    } else if (menu === "4") {
+      // hapusData()
+    } else if (menu === "5") {
+      break;
+    }
+  } while (true);
+</script>
