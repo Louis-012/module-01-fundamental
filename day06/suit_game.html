@@ -1,0 +1,58 @@
+<script>
+  const choices = ["rock", "paper", "scissor"];
+  let wins = 0,
+    loses = 0,
+    draws = 0;
+
+  function getComChoice() {
+    return choices[Math.floor(Math.random() * choices.length)];
+  }
+
+  function getResult(user, com) {
+    if (user === com) return "draw";
+    if (
+      (user === "rock" && com === "scissor") ||
+      (user === "scissor" && com === "paper") ||
+      (user === "paper" && com === "rock")
+    ) {
+      return "win";
+    } else {
+      return "lose";
+    }
+  }
+
+  while (true) {
+    let userInput = prompt(`Choose an option:
+    1. Rock
+    2. Paper
+    3. Scissor`);
+
+    let userChoice = choices[Number(userInput) - 1];
+
+    let comChoice = getComChoice();
+    let result = getResult(userChoice, comChoice);
+
+    if (result === "win") wins++;
+    else if (result === "lose") loses++;
+    else draws++;
+
+    alert(
+      `You chose: ${userChoice}
+Computer chose: ${comChoice}
+Result: ${result.toUpperCase()}
+
+Wins: ${wins}
+Loses: ${loses}
+Draws: ${draws}`
+    );
+
+    let cont = confirm("Do you want to continue?");
+    if (!cont) break;
+  }
+  alert(
+    `Final Record:
+Wins: ${wins}
+Loses: ${loses}
+Draws: ${draws}`
+  );
+</script>
